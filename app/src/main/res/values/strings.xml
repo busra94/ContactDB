@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ContactDB</string>
+
+        <string name="delete">Delete</string>
+        <string name="add">Add New</string>
+        <string name="modify">Modify Contact</string>
+        <string name="name">Name:</string>
+        <string name="Phone">PhoneNumber:</string>
+        <string name="Surname">Surname:</string>
+        <string name="email">Email:</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
