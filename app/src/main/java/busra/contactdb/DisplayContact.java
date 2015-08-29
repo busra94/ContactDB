@@ -1,41 +1,58 @@
 package busra.contactdb;
 
 import android.app.Activity;
-
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 
 /**
- * Created by busra on 22.08.2015.
+ * Created by busra on 25.08.2015.
  */
-public class DisplayContact extends Activity {
-    DatabaseOperations operations;
+public class DisplayActivity extends ListActivity {
+
+
     ListView list;
+    DatabaseOperations databaseOpr;
+    List values = new ArrayList();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_contacts);
+        this.setContentView(R.layout.list_contact_info);
 
-        Bundle bundle = getIntent().getExtras();
-        list = (ListView) findViewById(R.id.list);
+        list = (ListView) findViewById(android.R.id.list);
 
-        operations = new DatabaseOperations(this);
-        operations.openDB();
+        databaseOpr = new DatabaseOperations(this);
 
-        ArrayList<Contact> values = operations.getAllContacts();
-        ArrayAdapter<Contact> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
+        values = databaseOpr.getAllContacts();
+        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,values);
         list.setAdapter(adapter);
-    }
 
-    public void onClick(View view) {
+        View v = findViewById(R.id.back);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
 
 
     }
 }
+
+
+/**Intent intent = getIntent();
+String takeName =intent.getStringExtra(ContactActivity.SEND_NAME);
+String takeSurname = intent.getStringExtra(ContactActivity.SEND_SURNAME);
+String takePhone =intent.getStringExtra(ContactActivity.SEND_PHONE);
+String takeEmail = intent.getStringExtra(ContactActivity.SEND_EMAIL); */
+
+
