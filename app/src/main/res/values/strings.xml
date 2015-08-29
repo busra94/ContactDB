@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">ContactDB</string>
 
-        <string name="delete">Delete</string>
-        <string name="add">Add New</string>
+
+        <string name="delete">Delete Contact</string>
+        <string name="add">Add New Contact</string>
         <string name="modify">Modify Contact</string>
         <string name="name">Name:</string>
         <string name="Phone">PhoneNumber:</string>
         <string name="Surname">Surname:</string>
         <string name="email">Email:</string>
+        <string name="save">Save</string>
+
+        <string name="list">List Contacts</string>
+        <string name="btnBack">Back</string>
+
 
     <string name="action_settings">Settings</string>
 </resources>
