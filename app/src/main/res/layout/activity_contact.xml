@@ -4,13 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=". MainActivity">
+    tools:context=". ContactActivity">
 
-    /* in styles (parent) Theme.AppCompat.Light.DarkActionBar" burayi degistirdim.
-    Base.Theme.AppCompat.Light.DarkActionBar"*/
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15sp"
         android:text="@string/name"/>
@@ -20,7 +18,13 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_gravity="end" />
+        android:layout_gravity="end"
+        android:singleLine="true">
+        <requestFocus/>
+    </EditText>
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,9 +36,13 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_gravity="end" />
+        android:layout_gravity="end"
+        android:singleLine="true">
+
+    </EditText>
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Phone"
         android:textSize="17sp"/>
@@ -44,10 +52,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom"
+        android:singleLine="true">
+
+    </EditText>
+
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email"
         android:textSize="17sp"/>
@@ -57,38 +69,60 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom"
+        android:singleLine="true">
+
+    </EditText>
 
     <Button
         android:id="@+id/add"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5sp"
         android:text="@string/add"
         android:textColor="#000066"
         android:textStyle="bold"
-        android:textSize="15sp"/>
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"/>
+
     <Button
         android:id="@+id/delete"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/delete"
         android:textColor="#000066"
         android:textStyle="bold"
-        android:textSize="15sp"/>
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"/>
     <Button
         android:id="@+id/modify"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modify"
         android:textColor="#000066"
         android:textStyle="bold"
-        android:textSize="15sp"/>
-
-
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"/>
+    <Button
+        android:id="@+id/listButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/list"
+        android:textColor="#000066"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/count_records"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="13sp"/>
+    <ListView
+        android:id="@+id/list_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="467dp">
+    </ListView>
 
 </LinearLayout>
-
-
 
 
